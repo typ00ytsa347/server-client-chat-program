@@ -1,7 +1,6 @@
 from ipaddress import ip_address
 from PyQt5 import QtCore, QtWidgets
-from . import group_chat
-from client_gui import connection
+from client_gui import connection, group_chat
 
 import sys
 import socket
@@ -45,7 +44,7 @@ class Client(object):
         self.connect_ui = connection.Ui_Form()
         self.connect_ui.setupUi(self.connectWidget)
         self.connect_ui.pushButton.clicked.connect(self.btn_connect_clicked)
-
+        self.connect_ui.pushButton_2.clicked.connect(lambda:self.close())
         self.mainWindow.setGeometry(QtCore.QRect(480, 260, 360, 250))
         self.mainWindow.show()
 
@@ -64,7 +63,6 @@ class Client(object):
             self.recv_thread.start()
             print("[INFO] recv thread started")
             self.mainWindow.setGeometry(QtCore.QRect(280, 200, 580, 480))
-
 
     def show_message(self, message):
         self.chat_ui.textBrowser.append(message)
