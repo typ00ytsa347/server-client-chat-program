@@ -1,4 +1,4 @@
-# se364-assignment-2
+# server/client chat program
 
 ## How to install
 1. Download the file and unzip it
