@@ -1,4 +1,5 @@
 # server/client chat program
+A TCP socket Sever/Client chat program
 
 ## How to install
 1. Download the file and unzip it
